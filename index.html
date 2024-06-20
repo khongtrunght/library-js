@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+		<link href="css/style.css" rel="stylesheet" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="bg-gray-100 flex flex-col items-center p-6">
+		<h1 class="text-3xl font-bold mb-6">Phan Tuan's Library</h1>
+		<div
+			class="book-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-white rounded-lg shadow-md p-6 w-full max-w-4xl mb-6"
+		>
+			<!-- Books will be displayed here -->
+		</div>
+		<button
+			id="newBookButton"
+			class="bg-blue-500 text-white px-4 py-2 rounded mb-6"
+		>
+			NEW BOOK
+		</button>
+
+		<dialog
+			id="newBookDialog"
+			class="rounded-lg shadow-md p-6 w-full max-w-lg"
+		>
+			<form id="newBookForm" class="space-y-4">
+				<div>
+					<label class="block text-lg font-medium">
+						Title:
+						<input
+							type="text"
+							id="title"
+							name="title"
+							required
+							class="mt-1 block w-full px-3 py-2 border rounded"
+						/>
+					</label>
+				</div>
+				<div>
+					<label class="block text-lg font-medium">
+						Author:
+						<input
+							type="text"
+							id="author"
+							name="author"
+							required
+							class="mt-1 block w-full px-3 py-2 border rounded"
+						/>
+					</label>
+				</div>
+				<div>
+					<label class="block text-lg font-medium">
+						Number of Pages:
+						<input
+							type="number"
+							id="pages"
+							name="pages"
+							required
+							class="mt-1 block w-full px-3 py-2 border rounded"
+						/>
+					</label>
+				</div>
+				<div>
+					<label class="block text-lg font-medium">
+						Read:
+						<div class="mt-1 flex items-center space-x-4">
+							<label class="inline-flex items-center">
+								<input
+									type="radio"
+									id="readYes"
+									name="read"
+									value="Yes"
+									class="form-radio"
+								/>
+								<span class="ml-2">Yes</span>
+							</label>
+							<label class="inline-flex items-center">
+								<input
+									type="radio"
+									id="readNo"
+									name="read"
+									value="No"
+									class="form-radio"
+									checked
+								/>
+								<span class="ml-2">No</span>
+							</label>
+						</div>
+					</label>
+				</div>
+				<div class="flex justify-end space-x-4">
+					<button
+						type="submit"
+						class="bg-green-500 text-white px-4 py-2 rounded"
+					>
+						Add Book
+					</button>
+					<button
+						type="button"
+						id="cancelButton"
+						class="bg-gray-500 text-white px-4 py-2 rounded"
+					>
+						Cancel
+					</button>
+				</div>
+			</form>
+		</dialog>
+
+		<script src="script.js"></script>
+	</body>
+</html>
